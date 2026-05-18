@@ -1,0 +1,667 @@
+May-15 15:39:49.014 [main] DEBUG nextflow.cli.Launcher - $> nextflow run /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/main.nf -profile singularity -c /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/configs/local.config -resume --input /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/Data/ICR-Test/Pool_3827/samplesheet.csv --outdir /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/Results/Pool_3827 --genome GATK.GRCh38 --igenomes_base /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes --intervals /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/KAPA-HyperExomeV2/HyperExomeV2_hg38/HyperExomeV2_capture_targets.bed --pon /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000g_pon.hg38.vcf.gz --germline_resource /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/af-only-gnomad.hg38.vcf.gz --vep_cache /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/vep_cache --vep_genome GRCh38 --vep_species homo_sapiens --vep_cache_version 110 --aligner bwa-mem2 --wes --trim_fastq --trim_nextseq --tools mutect2,cnvkit,vep --skip_tools baserecalibrator --dont_use_soft_clipped_bases -offline
+May-15 15:39:49.072 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.10.2
+May-15 15:39:49.088 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/its/home/al871/.nextflow/plugins; core-plugins: nf-amazon@3.4.2,nf-azure@1.20.2,nf-cloudcache@0.5.0,nf-codecommit@0.5.0,nf-console@1.3.0,nf-google@1.23.3,nf-k8s@1.2.2,nf-tower@1.17.3,nf-wave@1.16.1
+May-15 15:39:49.103 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+May-15 15:39:49.103 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+May-15 15:39:49.105 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+May-15 15:39:49.114 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+May-15 15:39:49.135 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/nextflow.config
+May-15 15:39:49.138 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/configs/local.config
+May-15 15:39:49.139 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/nextflow.config
+May-15 15:39:49.139 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/configs/local.config
+May-15 15:39:49.155 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `singularity`
+May-15 15:39:51.173 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `singularity`
+May-15 15:39:51.206 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [apptainer, wave, test_full_germline_aws, docker, test_azure, test_full_azure, spark, arm64, charliecloud, conda, singularity, test_full_germline, podman, emulate_amd64, test_full_aws, debug, test, gpu, mutect, shifter, mamba, test_aws, test_full_germline_ncbench_agilent, test_full, test_full_germline_azure]
+May-15 15:39:51.211 [main] WARN  nextflow.config.ConfigBuilder - It appears you have never run this project before -- Option `-resume` is ignored
+May-15 15:39:51.270 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-core-utils@0.4.0, nf-fgbio@1.0.0, nf-prov@1.2.2, nf-schema@2.6.1]
+May-15 15:39:51.271 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+May-15 15:39:51.271 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-core-utils@0.4.0, nf-fgbio@1.0.0, nf-prov@1.2.2, nf-schema@2.6.1]
+May-15 15:39:51.272 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-core-utils version: 0.4.0
+May-15 15:39:51.278 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-core-utils@0.4.0' resolved
+May-15 15:39:51.278 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-core-utils@0.4.0'
+May-15 15:39:51.282 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-core-utils@0.4.0
+May-15 15:39:51.282 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-fgbio version: 1.0.0
+May-15 15:39:51.284 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-fgbio@1.0.0' resolved
+May-15 15:39:51.285 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-fgbio@1.0.0'
+May-15 15:39:51.293 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-fgbio@1.0.0
+May-15 15:39:51.293 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-prov version: 1.2.2
+May-15 15:39:51.294 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-prov@1.2.2' resolved
+May-15 15:39:51.294 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-prov@1.2.2'
+May-15 15:39:51.294 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-prov@1.2.2
+May-15 15:39:51.294 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-schema version: 2.6.1
+May-15 15:39:51.296 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-schema@2.6.1' resolved
+May-15 15:39:51.296 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-schema@2.6.1'
+May-15 15:39:51.297 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-schema@2.6.1
+May-15 15:39:51.307 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /its/home/al871/.nextflow/secrets/store.json
+May-15 15:39:51.309 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@2a0c244e] - activable => nextflow.secret.LocalSecretsProvider@2a0c244e
+May-15 15:39:51.311 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+May-15 15:39:51.322 [main] DEBUG nextflow.cli.CmdRun - Launching `/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/main.nf` [dreamy_thompson] DSL2 - revision: a181e42b34
+May-15 15:39:51.354 [main] DEBUG nextflow.Session - Session UUID: 8b058d9e-99ef-4901-9813-903351c9b1b0
+May-15 15:39:51.354 [main] DEBUG nextflow.Session - Run name: dreamy_thompson
+May-15 15:39:51.354 [main] DEBUG nextflow.Session - Executor pool size: 64
+May-15 15:39:51.360 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+May-15 15:39:51.363 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+May-15 15:39:51.377 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.10.2 build 10555
+  Created: 28-11-2025 19:24 UTC (19:24 BST)
+  System: Linux 5.15.0-139-generic
+  Runtime: Groovy 4.0.28 on OpenJDK 64-Bit Server VM 17.0.17-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 1034174@cssd028012 [127.0.1.1]
+  CPUs: 64 - Mem: 125.6 GB (7.8 GB) - Swap: 2 GB (2 GB)
+May-15 15:39:51.395 [main] DEBUG nextflow.Session - Work-dir: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/tmp/nextflow_work [ext2/ext3]
+May-15 15:39:51.413 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+May-15 15:39:51.419 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+May-15 15:39:51.421 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+May-15 15:39:51.432 [main] DEBUG nextflow.Session - Observer factory (v2): ValidationObserverFactory
+May-15 15:39:51.435 [main] DEBUG nextflow.Session - Observer factory: ProvObserverFactory
+May-15 15:39:51.439 [main] DEBUG nextflow.Session - Observer factory: NfcorePipelineObserverFactory
+May-15 15:39:51.468 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+May-15 15:39:51.473 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+May-15 15:39:51.508 [main] DEBUG nextflow.Session - Session start
+May-15 15:39:51.512 [main] WARN  n.p.nfcore.NfcoreConfigValidator - [main.nf] You are attempting to run the pipeline without any custom configuration!
+
+This will be dependent on your local compute environment but can be achieved via one or more of the following:
+   (1) Using an existing pipeline profile e.g. `-profile docker` or `-profile singularity`
+   (2) Using an existing nf-core/configs for your Institution e.g. `-profile crick` or `-profile uppmax`
+   (3) Using your own local custom config e.g. `-c /path/to/your/custom.config`
+
+Please refer to the quick start section and usage docs for the pipeline.
+ 
+May-15 15:39:51.515 [main] WARN  n.p.nfcore.NfcoreConfigValidator - nf-core pipelines do not accept positional arguments. The positional argument `nextflow` has been detected.
+HINT: A common mistake is to provide multiple values separated by spaces e.g. `-profile test, docker`.
+
+May-15 15:39:51.517 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/Results/Pool_3827/pipeline_info/execution_trace_2026-05-15_15-39-49.txt
+May-15 15:39:51.890 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+May-15 15:39:52.250 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryMap:paramsSummaryMap]; plugin Id: nf-schema
+May-15 15:39:52.255 [main] DEBUG n.validation.config.ValidationConfig - Set `validation.monochromeLogs` to false
+May-15 15:39:52.256 [main] DEBUG n.validation.config.ValidationConfig - Added the following parameters to the ignored parameters: [genomes, freebayes_filter, vep_cache_version]
+May-15 15:39:52.344 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [softwareVersionsToYAML:softwareVersionsToYAML]; plugin Id: nf-core-utils
+May-15 15:39:52.495 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryLog:paramsSummaryLog]; plugin Id: nf-schema
+May-15 15:39:52.496 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [validateParameters:validateParameters]; plugin Id: nf-schema
+May-15 15:39:52.497 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsHelp:paramsHelp]; plugin Id: nf-schema
+May-15 15:39:52.499 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryMap:paramsSummaryMap]; plugin Id: nf-schema
+May-15 15:39:52.499 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [samplesheetToList:samplesheetToList]; plugin Id: nf-schema
+May-15 15:39:52.500 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsHelp:paramsHelp]; plugin Id: nf-schema
+May-15 15:39:52.859 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [readStructure:readStructure]; plugin Id: nf-fgbio
+May-15 15:40:03.209 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryLog:paramsSummaryLog]; plugin Id: nf-schema
+May-15 15:40:03.209 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [validateParameters:validateParameters]; plugin Id: nf-schema
+May-15 15:40:03.210 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsHelp:paramsHelp]; plugin Id: nf-schema
+May-15 15:40:03.211 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryMap:paramsSummaryMap]; plugin Id: nf-schema
+May-15 15:40:03.211 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [samplesheetToList:samplesheetToList]; plugin Id: nf-schema
+May-15 15:40:03.211 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsHelp:paramsHelp]; plugin Id: nf-schema
+May-15 15:40:03.460 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [readStructure:readStructure]; plugin Id: nf-fgbio
+May-15 15:40:04.224 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [samplesheetToList:samplesheetToList]; plugin Id: nf-schema
+May-15 15:40:04.283 [main] INFO  nextflow.Nextflow - 
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;37m      ____[0m
+[0;37m    .´ _  `.[0m
+[0;37m   /  [0;32m|\[0m`-_ \[0m     [0;34m __        __   ___     [0m
+[0;37m  |   [0;32m| \[0m  `-|[0m    [0;34m|__`  /\  |__) |__  |__/[0m
+[0;37m   \ [0;32m|   \[0m  /[0m     [0;34m.__| /¯¯\ |  \ |___ |  \[0m
+[0;37m    `[0;32m|[0m____[0;32m\[0m´[0m
+
+[0;35m  nf-core/sarek 3.8.1[0m
+-[2m----------------------------------------------------[0m-
+
+May-15 15:40:04.317 [main] INFO  nextflow.Nextflow - [1mInput/output options[0m
+  [0;34minput                  : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/Data/ICR-Test/Pool_3827/samplesheet.csv[0m
+  [0;34moutdir                 : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/Results/Pool_3827[0m
+
+[1mMain options[0m
+  [0;34mintervals              : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/KAPA-HyperExomeV2/HyperExomeV2_hg38/HyperExomeV2_capture_targets.bed[0m
+  [0;34mwes                    : [0;32mtrue[0m
+  [0;34mtools                  : [0;32mmutect2,cnvkit,vep[0m
+  [0;34mskip_tools             : [0;32mbaserecalibrator[0m
+
+[1mFASTQ Preprocessing[0m
+  [0;34mtrim_fastq             : [0;32mtrue[0m
+  [0;34mtrim_nextseq           : [0;32mtrue[0m
+
+[1mPreprocessing[0m
+  [0;34maligner                : [0;32mbwa-mem2[0m
+
+[1mVariant Calling[0m
+  [0;34mcf_chrom_len           : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/Length/Homo_sapiens_assembly38.len[0m
+  [0;34mpon                    : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000g_pon.hg38.vcf.gz[0m
+  [0;34mpon_tbi                : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000g_pon.hg38.vcf.gz.tbi[0m
+
+[1mGeneral reference genome options[0m
+  [0;34migenomes_base          : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes[0m
+
+[1mReference genome options[0m
+  [0;34mascat_genome           : [0;32mhg38[0m
+  [0;34mascat_alleles          : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_alleles_hg38.zip[0m
+  [0;34mascat_loci             : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_loci_hg38.zip[0m
+  [0;34mascat_loci_gc          : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/GC_G1000_hg38.zip[0m
+  [0;34mascat_loci_rt          : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/RT_G1000_hg38.zip[0m
+  [0;34mbwa                    : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/BWAIndex/[0m
+  [0;34mbwamem2                : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/BWAmem2Index/[0m
+  [0;34mchr_dir                : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/Chromosomes[0m
+  [0;34mdbsnp                  : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/dbsnp_146.hg38.vcf.gz[0m
+  [0;34mdbsnp_tbi              : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/dbsnp_146.hg38.vcf.gz.tbi[0m
+  [0;34mdbsnp_vqsr             : [0;32m--resource:dbsnp,known=false,training=true,truth=false,prior=2.0 dbsnp_146.hg38.vcf.gz[0m
+  [0;34mdict                   : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.dict[0m
+  [0;34mdragmap                : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/dragmap/[0m
+  [0;34mfasta                  : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta[0m
+  [0;34mfasta_fai              : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta.fai[0m
+  [0;34mgermline_resource      : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/af-only-gnomad.hg38.vcf.gz[0m
+  [0;34mgermline_resource_tbi  : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/af-only-gnomad.hg38.vcf.gz.tbi[0m
+  [0;34mknown_indels           : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/{Mills_and_1000G_gold_standard.indels.hg38,beta/Homo_sapiens_assembly38.known_indels}.vcf.gz[0m
+  [0;34mknown_indels_tbi       : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/{Mills_and_1000G_gold_standard.indels.hg38,beta/Homo_sapiens_assembly38.known_indels}.vcf.gz.tbi[0m
+  [0;34mknown_indels_vqsr      : [0;32m--resource:gatk,known=false,training=true,truth=true,prior=10.0 Homo_sapiens_assembly38.known_indels.vcf.gz --resource:mills,known=false,training=true,truth=true,prior=10.0 Mills_and_1000G_gold_standard.indels.hg38.vcf.gz[0m
+  [0;34mknown_snps             : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000G_omni2.5.hg38.vcf.gz[0m
+  [0;34mknown_snps_tbi         : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000G_omni2.5.hg38.vcf.gz.tbi[0m
+  [0;34mknown_snps_vqsr        : [0;32m--resource:1000G,known=false,training=true,truth=true,prior=10.0 1000G_omni2.5.hg38.vcf.gz[0m
+  [0;34mmappability            : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/Control-FREEC/out100m2_hg38.gem[0m
+  [0;34mmsisensor2_models      : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/MSIsensor2/models_hg38//[0m
+  [0;34mmsisensorpro_scan      : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/MSIsensorPro/Homo_sapiens_assembly38.msisensor_scan.list[0m
+  [0;34mngscheckmate_bed       : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/NGSCheckMate/SNP_GRCh38_hg38_wChr.bed[0m
+  [0;34msentieon_dnascope_model: [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/Sentieon/SentieonDNAscopeModel1.1.model[0m
+  [0;34msnpeff_db              : [0;32mGRCh38.99[0m
+  [0;34mvep_cache              : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/vep_cache[0m
+  [0;34mvep_cache_version      : [0;32m110[0m
+  [0;34mvep_genome             : [0;32mGRCh38[0m
+  [0;34mvep_species            : [0;32mhomo_sapiens[0m
+
+[1mGeneric options[0m
+  [0;34mtrace_report_suffix    : [0;32m2026-05-15_15-39-49[0m
+
+[1mCore Nextflow options[0m
+  [0;34mrunName                : [0;32mdreamy_thompson[0m
+  [0;34mcontainerEngine        : [0;32msingularity[0m
+  [0;34mlaunchDir              : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/scripts/dnaseq[0m
+  [0;34mworkDir                : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/tmp/nextflow_work[0m
+  [0;34mprojectDir             : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1[0m
+  [0;34muserName               : [0;32mal871[0m
+  [0;34mprofile                : [0;32msingularity[0m
+  [0;34mconfigFiles            : [0;32m/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/nextflow.config, /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/configs/local.config[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+May-15 15:40:04.318 [main] INFO  nextflow.Nextflow - 
+* The pipeline
+    https://doi.org/10.12688/f1000research.16665.2
+    https://doi.org/10.1093/nargab/lqae031
+    https://doi.org/10.5281/zenodo.3476425
+
+* The nf-core framework
+    https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+    https://github.com/nf-core/sarek/blob/master/CITATIONS.md
+
+May-15 15:40:04.322 [main] DEBUG n.v.parameters.ParameterValidator - Starting parameters validation
+May-15 15:40:04.438 [main] DEBUG n.v.v.evaluators.SchemaEvaluator - Started validating /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/Data/ICR-Test/Pool_3827/samplesheet.csv
+May-15 15:40:04.466 [main] DEBUG n.v.v.evaluators.SchemaEvaluator - Validation of file '/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/Data/ICR-Test/Pool_3827/samplesheet.csv' passed!
+May-15 15:40:04.478 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-amazon version: 3.4.2
+May-15 15:40:04.481 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-amazon@3.4.2' resolved
+May-15 15:40:04.481 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-amazon@3.4.2'
+May-15 15:40:04.490 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-amazon@3.4.2
+May-15 15:40:04.497 [main] DEBUG nextflow.file.FileHelper - > Added 'S3FileSystemProvider' to list of installed providers [s3]
+May-15 15:40:04.497 [main] DEBUG nextflow.file.FileHelper - Started plugin 'nf-amazon' required to handle file: s3://annotation-cache/snpeff_cache/
+May-15 15:40:04.501 [main] DEBUG nextflow.file.FileHelper - Creating a file system instance for provider: S3FileSystemProvider; config=[:]
+May-15 15:40:04.507 [main] DEBUG nextflow.cloud.aws.config.AwsConfig - AWS S3 config properties: {max_error_retry=5}
+May-15 15:40:06.575 [main] DEBUG nextflow.cloud.aws.AwsClientFactory - No AWS credentials available - falling back to anonymous access
+May-15 15:40:07.238 [main] DEBUG nextflow.cloud.aws.nio.S3Client - Unable to fetch caller account - (Service: S3, Status Code: 307, Request ID: EG6M5GR84CBER4P6, Extended Request ID: uxaKpXrSbVAlwFq0hlLlZ2nruLC9AtBkUoFJv4R2iE9V5Dfg7IbSXqZnd9meRxB1nFWJv6zG+2eM2xLL8erYyzW9ka0Qx3VE) (SDK Attempt Count: 1) 
+May-15 15:40:07.796 [main] DEBUG n.v.parameters.ParameterValidator - Finishing parameters validation
+May-15 15:40:07.884 [main] WARN  nextflow.Nextflow - The default Panel-of-Normals provided by GATK is used for Mutect2.
+It is highly recommended to generate one from normal samples that are technical similar to the tumor ones.
+For more information: https://gatk.broadinstitute.org/hc/en-us/articles/360035890631-Panel-of-Normals-PON-
+May-15 15:40:07.935 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SAREK:PREPARE_INTERVALS:CREATE_INTERVALS_BED
+May-15 15:40:07.937 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:UNZIP.*|UNTAR.*|TABIX.*|BUILD_INTERVALS|CREATE_INTERVALS_BED|VCFTOOLS|BCFTOOLS.*|SAMTOOLS_INDEX` matches process NFCORE_SAREK:PREPARE_INTERVALS:CREATE_INTERVALS_BED
+May-15 15:40:07.937 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:CREATE_INTERVALS_BED` matches process NFCORE_SAREK:PREPARE_INTERVALS:CREATE_INTERVALS_BED
+May-15 15:40:07.950 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-15 15:40:07.950 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-15 15:40:07.955 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+May-15 15:40:07.959 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=125.6 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+May-15 15:40:07.960 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+May-15 15:40:07.973 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'NFCORE_SAREK:PREPARE_INTERVALS:CREATE_INTERVALS_BED': maxForks=0; fair=false; array=0
+May-15 15:40:08.009 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_SPLIT
+May-15 15:40:08.010 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:UNZIP.*|UNTAR.*|TABIX.*|BUILD_INTERVALS|CREATE_INTERVALS_BED|VCFTOOLS|BCFTOOLS.*|SAMTOOLS_INDEX` matches process NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_SPLIT
+May-15 15:40:08.013 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:UNZIP.*|UNTAR.*|TABIX.*|BUILD_INTERVALS|CREATE_INTERVALS_BED|VCFTOOLS|BCFTOOLS.*|SAMTOOLS_INDEX` matches process NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_SPLIT
+May-15 15:40:08.014 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:TABIX_BGZIPTABIX_INTERVAL_SPLIT|TABIX_BGZIPTABIX_INTERVAL_COMBINED` matches process NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_SPLIT
+May-15 15:40:08.023 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-15 15:40:08.023 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-15 15:40:08.024 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_SPLIT': maxForks=0; fair=false; array=0
+May-15 15:40:08.033 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_COMBINED
+May-15 15:40:08.034 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:UNZIP.*|UNTAR.*|TABIX.*|BUILD_INTERVALS|CREATE_INTERVALS_BED|VCFTOOLS|BCFTOOLS.*|SAMTOOLS_INDEX` matches process NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_COMBINED
+May-15 15:40:08.036 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:UNZIP.*|UNTAR.*|TABIX.*|BUILD_INTERVALS|CREATE_INTERVALS_BED|VCFTOOLS|BCFTOOLS.*|SAMTOOLS_INDEX` matches process NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_COMBINED
+May-15 15:40:08.037 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:TABIX_BGZIPTABIX_INTERVAL_SPLIT|TABIX_BGZIPTABIX_INTERVAL_COMBINED` matches process NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_COMBINED
+May-15 15:40:08.044 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-15 15:40:08.044 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-15 15:40:08.045 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_COMBINED': maxForks=0; fair=false; array=0
+May-15 15:40:08.060 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withLabel:process_low` matches labels `process_low` for process with name NFCORE_SAREK:PREPARE_REFERENCE_CNVKIT:CNVKIT_ANTITARGET
+May-15 15:40:08.061 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:CNVKIT_ANTITARGET` matches process NFCORE_SAREK:PREPARE_REFERENCE_CNVKIT:CNVKIT_ANTITARGET
+May-15 15:40:08.066 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-15 15:40:08.066 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-15 15:40:08.067 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'NFCORE_SAREK:PREPARE_REFERENCE_CNVKIT:CNVKIT_ANTITARGET': maxForks=0; fair=false; array=0
+May-15 15:40:08.071 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withLabel:process_low` matches labels `process_low` for process with name NFCORE_SAREK:PREPARE_REFERENCE_CNVKIT:CNVKIT_REFERENCE
+May-15 15:40:08.072 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:CNVKIT_REFERENCE` matches process NFCORE_SAREK:PREPARE_REFERENCE_CNVKIT:CNVKIT_REFERENCE
+May-15 15:40:08.077 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-15 15:40:08.077 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-15 15:40:08.077 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'NFCORE_SAREK:PREPARE_REFERENCE_CNVKIT:CNVKIT_REFERENCE': maxForks=0; fair=false; array=0
+May-15 15:40:08.096 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_d3865926248d0c08: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/samtools/stats/main.nf
+  Script_c8d59298afea0bfb: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/controlfreec/freec2circos/main.nf
+  Script_16777475677f32d8: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/cnnscorevariants/main.nf
+  Script_9e61b79b569950a4: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/fastqc/main.nf
+  Script_e32e42ae4de921ec: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/fgbio/groupreadsbyumi/main.nf
+  Script_e3adf9ad2f2912db: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/calculatecontamination/main.nf
+  Script_da5079923d83b72c: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/mutect2/main.nf
+  Script_9c2e978ff49f2509: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_tumor_only_all/main.nf
+  Script_cd9de50525435b88: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_tumor_only_lofreq/main.nf
+  Script_ee8970a3b78d31c2: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/fastp/main.nf
+  Script_8ff83fc63a22c8fb: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/local/samtools/reindex_bam/main.nf
+  Script_a2aa0d1ede76c3e4: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/cat/cat/main.nf
+  Script_213f65daf02ad325: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_convert_samtools/main.nf
+  Script_1831c72c96b04171: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/multiqc/main.nf
+  Script_1e06434ac317a579: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/genomicsdbimport/main.nf
+  Script_8fc82b9520076c78: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/sentieon/tnscope/main.nf
+  Script_129045cbcec43290: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/goleft/indexcov/main.nf
+  Script_1f0a1eb4bf79a7fd: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_sentieon_dedup/main.nf
+  Script_4da5e6231058e316: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/markduplicates/main.nf
+  Script_55d562cd46880324: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/sentieon/dnamodelapply/main.nf
+  Script_fff8e472d2832414: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/snpsift/annmem/main.nf
+  Script_9f4b705a218210c4: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/prepare_reference_cnvkit/main.nf
+  Script_62f899b12a250fec: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/vcf_variant_filtering_gatk/main.nf
+  Script_47c9e5087123dd2b: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bcftools/mpileup/main.nf
+  Script_09d762bbddf624de: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/fgbio/callmolecularconsensusreads/main.nf
+  Script_3ff925592f3c771c: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bwamem2/index/main.nf
+  Script_057d3de35ec771e9: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_markduplicates_spark/main.nf
+  Script_94903505569de6f7: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bcftools/stats/main.nf
+  Script_f635d70ccf3f5f7c: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4spark/markduplicates/main.nf
+  Script_10693a2faf538ce1: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_somatic_tnscope/main.nf
+  Script_881607023f7cda54: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/samtools/convert/main.nf
+  Script_2aaa99b284400807: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/baserecalibrator/main.nf
+  Script_e5fccee2ba9a7b56: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/samtools/merge/main.nf
+  Script_ca1602e337ab4f2a: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/cnvkit/genemetrics/main.nf
+  Script_5977f542cd315b9b: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/nf-core/utils_nfcore_pipeline/main.nf
+  Script_b51e866816de7307: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/samtools/bam2fq/main.nf
+  Script_470736e50691adf4: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/sentieon/bwamem/main.nf
+  Script_5a1ee4df50ceb976: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/channel_markduplicates_create_csv/main.nf
+  Script_699b096599f2ee18: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/varlociraptor/preprocess/main.nf
+  Script_31c41c03e5d4f489: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/controlfreec/makegraph2/main.nf
+  Script_4779b6382e5427ab: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/cat/fastq/main.nf
+  Script_c752e59174411c9b: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/sentieon/dedup/main.nf
+  Script_0edb32c316733e34: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_applybqsr_spark/main.nf
+  Script_7882589d2e2ef368: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/vcf_annotate_all/main.nf
+  Script_d11b5c79ea543e09: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_tumor_only_controlfreec/main.nf
+  Script_12f1b0cba653bc40: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_somatic_ascat/main.nf
+  Script_a44e2ae5dde189b4: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/varlociraptor/estimatealignmentproperties/main.nf
+  Script_3fb35437a373c5f5: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/haplotypecaller/main.nf
+  Script_dedbba5968c49a0d: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/samtools/faidx/main.nf
+  Script_6ec5d65e462b3741: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bwa/index/main.nf
+  Script_57ee94b0d1ea8856: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/channel_variant_calling_create_csv/main.nf
+  Script_aa9f615e74edb2bb: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/local/consensus_from_sites/main.nf
+  Script_020aec49db5802b2: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/ngscheckmate/ncm/main.nf
+  Script_3ff1656b1d66c1f2: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/samtools/index/main.nf
+  Script_458c0092a1c22da3: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_joint_calling_germline_sentieon/main.nf
+  Script_96bfb03e094f76ad: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bbmap/bbsplit/main.nf
+  Script_e1b15902bafd2763: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/muse/call/main.nf
+  Script_05df603030fed9db: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/snpsift/annmemcreate/main.nf
+  Script_2a3123de5fac596c: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/untar/main.nf
+  Script_815be9f6135ccf61: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/deepvariant/rundeepvariant/main.nf
+  Script_5062712f72bf0720: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/filtervarianttranches/main.nf
+  Script_ee2021533d309cc4: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_baserecalibrator_spark/main.nf
+  Script_0dfa2e91e327e296: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/local/add_info_to_vcf/main.nf
+  Script_bc049ecb86093316: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_sentieon_dnascope/main.nf
+  Script_97744432895da88c: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_single_tiddit/main.nf
+  Script_f37937d9181ab528: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/manta/tumoronly/main.nf
+  Script_77be0e4da5375fa2: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/ensemblvep/vep/main.nf
+  Script_d58a50eb8aa3fb8f: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/strelka/germline/main.nf
+  Script_3b6d187f886ac6f1: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bcftools/view/main.nf
+  Script_0b3aa1b1f497e474: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/genotypegvcfs/main.nf
+  Script_c43ec3bd60a3a59f: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/vcf_consensus/main.nf
+  Script_38e8a37f244eca8f: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_sentieon_haplotyper/main.nf
+  Script_e9e7f4066fddf4e6: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_somatic_all/main.nf
+  Script_5b41797615e2fc2b: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/controlfreec/freec2bed/main.nf
+  Script_fe34523cbd8db149: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bcftools/norm/main.nf
+  Script_3b2dffd8f3963e50: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/variantrecalibrator/main.nf
+  Script_5063435f9f6c42c1: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_somatic_controlfreec/main.nf
+  Script_3ef461928d7d028b: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/fastq_create_umi_consensus_fgbio/main.nf
+  Script_995f14944e0d306c: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_mpileup/main.nf
+  Script_795a2a24ac2ccf20: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/cnvkit/reference/main.nf
+  Script_0d2b067c028ec877: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_indexcov/main.nf
+  Script_bd05b8b1286fb521: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/muse/sump/main.nf
+  Script_742b21ffb2235c4e: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/createsequencedictionary/main.nf
+  Script_75ff16c9c1d91a06: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/post_variantcalling/main.nf
+  Script_4f112f84b1356dbb: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/download_cache_snpeff_vep/main.nf
+  Script_bbfd36a83745a7a5: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/vcf_varlociraptor_somatic/main.nf
+  Script_b022a7568d5c075d: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/controlfreec/assesssignificance/main.nf
+  Script_5eb21cb057cef71a: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_baserecalibrator/main.nf
+  Script_3014c4fa352b3123: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gawk/main.nf
+  Script_ef423efef585939a: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/cram_merge_index_samtools/main.nf
+  Script_c325a773b35ccbda: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/mergemutectstats/main.nf
+  Script_139721c25e91a05e: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/manta/somatic/main.nf
+  Script_e8cc63eeae979307: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/vcf_normalization/main.nf
+  Script_8b775112b146c869: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/ensemblvep/download/main.nf
+  Script_f8aa24d61b684c94: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/svdb/merge/main.nf
+  Script_6efafff2d75e0e5c: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bcftools/isec/main.nf
+  Script_22665c4a579d54f9: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/cnvkit/batch/main.nf
+  Script_bac0720a00298698: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/sentieon/haplotyper/main.nf
+  Script_41900ab7f561bf28: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_somatic_tiddit/main.nf
+  Script_4f4c1dcf01d7366a: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_joint_calling_germline_gatk/main.nf
+  Script_fd23f2e495d832d2: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/dragmap/hashtable/main.nf
+  Script_e470ff0e42e3c150: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/estimatelibrarycomplexity/main.nf
+  Script_0fa911c2c028412f: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/yte/main.nf
+  Script_65f7a9bfe841c9f1: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_haplotypecaller/main.nf
+  Script_5c43d96ddafe0f62: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_tumor_only_tnscope/main.nf
+  Script_dd30f4d324bbd5a4: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/vcftools/main.nf
+  Script_7d8c03a630763ad0: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_single_strelka/main.nf
+  Script_bb9dff32a1ece25c: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_somatic_strelka/main.nf
+  Script_e3bc58084c78a738: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/tabix/bgziptabix/main.nf
+  Script_832c57cf0aab8a49: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/nf-core/vcf_annotate_snpeff/main.nf
+  Script_99ab9583e4f1b91c: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/main.nf
+  Script_51a9fcea96ed4b6d: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/snpeff/download/main.nf
+  Script_32480835daec38dc: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/workflows/sarek/main.nf
+  Script_97e77ceac500b261: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/getpileupsummaries/main.nf
+  Script_0043f4a0d27943e7: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_somatic_mutect2/main.nf
+  Script_8b5464d3b2ec40c1: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/fgbio/fastqtobam/main.nf
+  Script_9444c9672b28643d: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bcftools/sort/main.nf
+  Script_d1c3c348a8bb43e0: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/mosdepth/main.nf
+  Script_e874e4c22dc5a297: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/applyvqsr/main.nf
+  Script_c36bd2a13019fe9e: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_tumor_only_mutect2/main.nf
+  Script_e230aa85dbad02c2: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_germline_manta/main.nf
+  Script_95929304704df871: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/samtools/mpileup/main.nf
+  Script_fc53ef7803a4514b: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/samplesheet_to_channel/main.nf
+  Script_2e965d9ef38485d0: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/mergevcfs/main.nf
+  Script_ae979274742deb40: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/strelka/somatic/main.nf
+  Script_7de179c0ca30c962: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/fgbio/copyumifromreadname/main.nf
+  Script_c4d9dc75dbe4357c: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/annotation_cache_initialisation/main.nf
+  Script_2e576b376fb8f786: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/ascat/main.nf
+  Script_17d3621bd91fc365: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/vcflib/vcffilter/main.nf
+  Script_cf2ce48a700fff15: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/cnvkit/call/main.nf
+  Script_f3696fdd8013652c: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/cnvkit/export/main.nf
+  Script_f4c8c62efb143616: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_deepvariant/main.nf
+  Script_5cebc9d10dc39562: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/gatherpileupsummaries/main.nf
+  Script_999cd51b32a9b657: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bcftools/concat/main.nf
+  Script_0f3077e98f6a93f6: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bwa/mem/main.nf
+  Script_8ae69de56979396b: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/sentieon/dnascope/main.nf
+  Script_be7f0e343f57458d: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/snpeff/snpeff/main.nf
+  Script_c17d97aff66c2c44: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_somatic_muse/main.nf
+  Script_923487aaf7084f76: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/msisensorpro/scan/main.nf
+  Script_a4bb05978cccb4df: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_cnvkit/main.nf
+  Script_357090ea62899a26: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_tumor_only_manta/main.nf
+  Script_47023b830d2a0f0f: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/tiddit/sv/main.nf
+  Script_26b8766c8dff8a90: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/varlociraptor/callvariants/main.nf
+  Script_ea1853a6d4a4e95a: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/lofreq/callparallel/main.nf
+  Script_f9fcfa1f9027ddd1: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/controlfreec/freec/main.nf
+  Script_bde094b52e772430: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/prepare_snpsift_databases/main.nf
+  Script_29729f873ffa83f6: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bcftools/annotate/main.nf
+  Script_f136faeb54c006a4: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/sentieon/varcal/main.nf
+  Script_3401f396d5aaf4cd: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/fastq_preprocess_parabricks/main.nf
+  Script_2205228d1e7680a0: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/applybqsr/main.nf
+  Script_bc87b7292245a358: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/gatherbqsrreports/main.nf
+  Script_627ad1940fdd7cb5: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bcftools/merge/main.nf
+  Script_9f32e1338f4a055b: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_merge_index_samtools/main.nf
+  Script_626093258281df3a: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/fastq_preprocess_gatk/main.nf
+  Script_0922f942cfe2ef52: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/learnreadorientationmodel/main.nf
+  Script_9fb5abe6fbdb8ebe: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/sentieon/applyvarcal/main.nf
+  Script_29c7efb9b3c59757: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4spark/baserecalibrator/main.nf
+  Script_12b0826521e6b3c5: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/intervallisttobed/main.nf
+  Script_f3effb19630659f1: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_applybqsr/main.nf
+  Script_66516be8545f71f2: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/channel_align_create_csv/main.nf
+  Script_4fc6982d32f08cdb: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/parabricks/fq2bam/main.nf
+  Script_5bbbdafded73c880: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/local/create_intervals_bed/main.nf
+  Script_c6f08ed104601f3e: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/prepare_genome/main.nf
+  Script_098a4c270dca3c62: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/samtools/view/main.nf
+  Script_83136d252c233538: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/spring/decompress/main.nf
+  Script_d441d43097ec2090: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/utils_nfcore_sarek_pipeline/main.nf
+  Script_09594d5a98b67e1b: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/rbt/vcfsplit/main.nf
+  Script_bc1034bcad96577b: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/channel_applybqsr_create_csv/main.nf
+  Script_335f36ea7317a7f4: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/bwamem2/mem/main.nf
+  Script_a76ca2ecf513b283: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_germline_all/main.nf
+  Script_7a96355ab7d6f1a3: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_markduplicates/main.nf
+  Script_5a920047d3394145: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/fastq_align/main.nf
+  Script_e2e8ededaf826daf: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/msisensorpro/msisomatic/main.nf
+  Script_c898312229dfa714: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/prepare_intervals/main.nf
+  Script_7622bfafc0f8b1c4: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4/filtermutectcalls/main.nf
+  Script_0e0cf74ec18f90df: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/msisensor2/msi/main.nf
+  Script_a64a54a01f8015c7: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/nf-core/utils_nfschema_plugin/main.nf
+  Script_a3469e86f9cb5ee1: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/vcf_varlociraptor_single/main.nf
+  Script_ff6ca6672973c21d: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/cram_qc_mosdepth_samtools/main.nf
+  Script_81ec1f07ab213590: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/samtools/collatefastq/main.nf
+  Script_6ad6d367caf97566: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/dragmap/align/main.nf
+  Script_1bd098db325044b1: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/channel_baserecalibrator_create_csv/main.nf
+  Script_fee2972096e202e5: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/sentieon/gvcftyper/main.nf
+  Script_a7f5367ecc120b42: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/manta/germline/main.nf
+  Script_d40ac62954f4e5c8: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/vcf_concatenate_germline/main.nf
+  Script_ef5e67a4d3d97487: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/cram_sampleqc/main.nf
+  Script_4f612cfd8c52e8cd: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/nf-core/utils_nextflow_pipeline/main.nf
+  Script_0f8a25e4e53f31e6: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/vcf_qc_bcftools_vcftools/main.nf
+  Script_43e700bcd7d03e23: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/tabix/tabix/main.nf
+  Script_5c7c9a9084330a48: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_freebayes/main.nf
+  Script_3aa19ca144b1981c: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/gatk4spark/applybqsr/main.nf
+  Script_377318d6eb5b2f52: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/local/bam_variant_calling_somatic_manta/main.nf
+  Script_ba3a5724e6a02fb3: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/cnvkit/antitarget/main.nf
+  Script_173334d594ab56a1: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/subworkflows/nf-core/bam_ngscheckmate/main.nf
+  Script_f526ea333b3ea25e: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/freebayes/main.nf
+  Script_8b560cf26a0f6f39: /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/CUP_WES_Pipeline/sarek-3.8.1/3_8_1/modules/nf-core/unzip/main.nf
+May-15 15:40:08.096 [main] DEBUG nextflow.Session - Session aborted -- Cause: Path provided with VEP cache is invalid.
+Make sure there is a directory named homo_sapiens/110_GRCh38 in /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/vep_cache.
+Please refer to https://nf-co.re/sarek/usage#how-to-customise-snpeff-and-vep-annotation for more information.
+May-15 15:40:08.112 [main] DEBUG nextflow.Session - The following nodes are still active:
+  [operator] map
+  [operator] unique
+  [operator] groupTuple
+  [operator] map
+  [operator] map
+  [operator] groupTuple
+  [operator] map
+  [operator] map
+  [operator] unique
+  [operator] groupTuple
+  [operator] map
+  [operator] flatMap
+  [operator] groupTuple
+  [operator] map
+  [operator] map
+  [operator] tap
+  [operator] groupTuple
+  [operator] map
+  [operator] combine
+  [operator] map
+  [operator] filter
+  [operator] ifEmpty
+  [operator] filter
+  [operator] ifEmpty
+  [operator] map
+  [operator] collect
+  [operator] map
+  [operator] collect
+  [operator] map
+  [operator] collect
+  [operator] map
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] concat
+  [operator] collect
+  [operator] concat
+  [operator] collect
+  [operator] concat
+  [operator] collect
+  [operator] concat
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] collect
+  [operator] map
+  [operator] mix
+  [operator] flatten
+  [operator] map
+  [operator] toSortedList
+  [operator] flatten
+  [operator] collate
+  [operator] map
+  [operator] collect
+  [operator] map
+  [operator] transpose
+  [operator] map
+  [operator] map
+  [operator] toList
+  [operator] map
+  [operator] transpose
+  [operator] mix
+  [operator] mix
+  [operator] map
+  [operator] collect
+  [operator] map
+  [operator] collect
+  [operator] map
+  [operator] collect
+  [operator] map
+  [operator] map
+  [operator] flatten
+  [operator] map
+  [operator] map
+  [operator] map
+  [operator] mix
+  [operator] mix
+  [operator] collect
+  [operator] mix
+  [operator] mix
+  [operator] mix
+
+May-15 15:40:08.117 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+May-15 15:40:08.164 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+May-15 15:40:08.172 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+May-15 15:40:08.411 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+May-15 15:40:08.438 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+May-15 15:40:08.443 [main] ERROR nextflow.cli.Launcher - @unknown
+nextflow.exception.WorkflowScriptErrorException: Path provided with VEP cache is invalid.
+Make sure there is a directory named homo_sapiens/110_GRCh38 in /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline/References/vep_cache.
+Please refer to https://nf-co.re/sarek/usage#how-to-customise-snpeff-and-vep-annotation for more information.
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.Nextflow.error(Nextflow.groovy:244)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_c4d9dc75dbe4357c$_runScript_closure1$_closure2.doCall(Script_c4d9dc75dbe4357c:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:280)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:205)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:189)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:51)
+	at nextflow.script.ComponentDef.invoke_o(ComponentDef.groovy:40)
+	at nextflow.script.WorkflowBinding.invokeMethod(WorkflowBinding.groovy:105)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:651)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeOnDelegationObjects(ClosureMetaClass.java:392)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:331)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_99ab9583e4f1b91c$_runScript_closure1$_closure4.doCall(Script_99ab9583e4f1b91c:196)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:280)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:205)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:189)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:51)
+	at nextflow.script.ComponentDef.invoke_o(ComponentDef.groovy:40)
+	at nextflow.script.WorkflowBinding.invokeMethod(WorkflowBinding.groovy:105)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:651)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeOnDelegationObjects(ClosureMetaClass.java:392)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:331)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_99ab9583e4f1b91c$_runScript_closure2$_closure13.doCall(Script_99ab9583e4f1b91c:370)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:280)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:205)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:189)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:51)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:249)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:260)
+	at nextflow.script.parser.v1.ScriptLoaderV1.runScript(ScriptLoaderV1.groovy:246)
+	at nextflow.script.parser.v1.ScriptLoaderV1.runScript(ScriptLoaderV1.groovy)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:246)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:139)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:429)
+	at nextflow.cli.Launcher.run(Launcher.groovy:515)
+	at nextflow.cli.Launcher.main(Launcher.groovy:675)
+May-15 15:40:08.445 [Actor Thread 43] ERROR nextflow.extension.OperatorImpl - @unknown
+nextflow.exception.WorkflowScriptErrorException: The sample-sheet only contains normal-samples, but the following tools, which were requested with "--tools", expect at least one tumor-sample : mutect2
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.Nextflow.error(Nextflow.groovy:244)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_fc53ef7803a4514b$_runScript_closure1$_closure2$_closure16.doCall(Script_fc53ef7803a4514b:257)
+	at Script_fc53ef7803a4514b$_runScript_closure1$_closure2$_closure16.doCall(Script_fc53ef7803a4514b)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:280)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.extension.OperatorImpl$_ifEmpty_closure30.doCall(OperatorImpl.groovy:1043)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:280)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.extension.DataflowHelper$3.afterStop(DataflowHelper.groovy:257)
+	at groovyx.gpars.dataflow.operator.DataflowProcessor.fireAfterStop(DataflowProcessor.java:324)
+	at groovyx.gpars.dataflow.operator.DataflowProcessorActor.afterStop(DataflowProcessorActor.java:59)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1339)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1094)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePojoMethod(InvokerHelper.java:633)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:624)
+	at groovyx.gpars.actor.Actor.callDynamic(Actor.java:369)
+	at groovyx.gpars.actor.Actor.handleTermination(Actor.java:320)
+	at groovyx.gpars.actor.AbstractLoopingActor$1.handleMessage(AbstractLoopingActor.java:86)
+	at groovyx.gpars.util.AsyncMessagingCore.run(AsyncMessagingCore.java:132)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)

@@ -1,0 +1,11 @@
+# Large data directories — not tracked in version control
+Data/
+References/
+Results/
+
+# Singularity cache
+Singularity-cache/
+
+# Nextflow work/cache directories (any depth)
+**/.nextflow*/
+.nextflow*/
