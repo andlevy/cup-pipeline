@@ -1,9 +1,0 @@
-{
-  "logging_level": "INFO",
-  "classifier_name": "",
-  "cache_dir": "/mnt/shared_data/shared/",
-  "alpha_missense_file": "/mnt/shared_data/shared/AlphaMissense_hg38.tsv.gz",
-  "alpha_missense_isoforms": "/mnt/shared_data/shared/AlphaMissense_isoforms_hg38.tsv.gz",
-  "pick_order": "mane_select,mane_plus_clinical,canonical,ccds,biotype,rank",
-  "canonical_info": false
-}

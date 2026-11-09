@@ -314,8 +314,7 @@ The following were already present on the machine before this setup:
     │   └── scripts/
     │       └── dnaseq/                  # Run, PureCN and filtering scripts
     │           └── legacy/              # Superseded scripts kept for reference
-    ├── CUP_RNA_Pipeline/                # See RNAseqSetupLog.md
-    └── CUP_DependANT_Pipeline/          # Downstream dependency / drug-target analysis
+    └── CUP_RNA_Pipeline/                # See RNAseqSetupLog.md
 ```
 
 ---

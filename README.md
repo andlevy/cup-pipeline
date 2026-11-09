@@ -4,7 +4,6 @@ Genomic analysis pipelines for **Cancer of Unknown Primary (CUP)** tumour sample
 
 - **Whole-exome sequencing (WES):** somatic SNV/indel and copy-number calling from FFPE tumour-only samples.
 - **RNA-seq:** gene and transcript expression quantification.
-- **Downstream analysis:** from mutations and expression to gene dependencies, drugs and clinical trials.
 
 The pipelines run on a single local Linux workstation using Nextflow with Singularity/Apptainer containers. After a one-time download, all production runs are fully **offline**.
 
@@ -22,8 +21,6 @@ CUP_Pipeline/
 │   ├── rnaseq-3.23.0/3_23_0/  #   Pipeline source (nf-core download, unmodified)
 │   ├── configs/local.config
 │   └── scripts/rnaseq/        #   Download, test and production run scripts
-├── CUP_DependANT_Pipeline/    # Downstream: LoF/GoF calling, essential-gene prediction,
-│                              #   gene→drug and clinical-trial matching
 ├── envs/                      # Conda environment definitions
 └── Documents/                 # Setup logs / reproducibility guides
 ```
@@ -60,16 +57,6 @@ Key design decisions:
 ## RNA-seq Pipeline (CUP_RNA_Pipeline)
 
 nf-core/rnaseq 3.23.0 runs with Trim Galore, STAR alignment and Salmon quantification (`--aligner star_salmon`) against local Ensembl GRCh38 v115 FASTA/GTF. Explicit `--fasta`/`--gtf` are used instead of `--genome` so runs stay offline; the STAR index is built on the first run and reused via `-resume`.
-
-## Downstream Analysis (CUP_DependANT_Pipeline)
-
-Python application that takes patient mutation and expression data and:
-1. Identifies loss- and gain-of-function mutations (VEP, AlphaMissense).
-2. Predicts essential (dependency) genes with a trained classifier.
-3. Maps essential genes to drugs (ChEMBL).
-4. Finds matching clinical trials (ClinicalTrials.gov API).
-
-See [CUP_DependANT_Pipeline/dep-scripts/README.md](CUP_DependANT_Pipeline/dep-scripts/README.md).
 
 ---
 

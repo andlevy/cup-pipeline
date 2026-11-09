@@ -26,3 +26,4 @@ __pycache__/
 
 # Kept locally, not part of this repository
 CUP_GeneTargetDatabase/
+CUP_DependANT_Pipeline/dep-scripts/
