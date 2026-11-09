@@ -1,0 +1,10 @@
+# nf-core tools + Java 17 for running Nextflow pipelines (Sarek, RNA-seq)
+name: nfcore
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - openjdk=17
+  - pip
+  - pip:
+      - nf-core==4.0.2

@@ -1,0 +1,10 @@
+# Post-pipeline WES variant and CNV filtering scripts (dnaseq-filter*.py)
+name: cupwes
+channels:
+  - conda-forge
+dependencies:
+  - bioconda::cyvcf2
+  - python=3.11
+  - numpy
+  - matplotlib
+  - pandas

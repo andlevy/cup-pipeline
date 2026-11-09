@@ -212,13 +212,19 @@ R -e "library(PureCN); cat('PureCN loaded successfully\n')"
 
 ---
 
-## 11. Python Packages (base environment)
+## 11. cupwes Conda Environment (post-pipeline filtering)
 
-Required for the post-VEP variant filtering script.
+Required for the post-VEP somatic variant filter (`dnaseq-filtervariants.py`) and the CNV filter (`dnaseq-filtercnv.py`). `matplotlib` and `numpy` are only needed for the optional `--report` QC output.
 
 ```bash
-pip install cyvcf2 pandas --break-system-packages
+conda env create -f envs/cupwes.yml
+# equivalent to:
+# conda create -n cupwes -c conda-forge -c bioconda python=3.11 cyvcf2 pandas numpy matplotlib -y
 ```
+
+**Environment location:** `/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/miniconda3/envs/cupwes/`
+
+All conda environments used by the project are recorded in `envs/` at the repository root.
 
 ---
 
@@ -300,18 +306,17 @@ The following were already present on the machine before this setup:
     ├── Singularity-cache/
     │   └── nf-sarek/
     │       └── sarek-3.8.1/             # Singularity container images
-    ├── MasterScripts/                   # Shared utility scripts
+    ├── envs/                            # Conda environment definitions
     ├── CUP_WES_Pipeline/
     │   ├── sarek-3.8.1/                 # Pipeline code
     │   ├── configs/
     │   │   └── local.config             # Nextflow local executor config
     │   └── scripts/
-    │       ├── dnaseq/                  # Run scripts
-    │       └── filter_variants.py       # Post-VEP filtering script
-    ├── CUP_RNA_Pipeline/
-    │   └── scripts/
-    └── CUP_Downstream_Pipeline/
-        └── scripts/
+    │       └── dnaseq/                  # Run, PureCN and filtering scripts
+    │           └── legacy/              # Superseded scripts kept for reference
+    ├── CUP_RNA_Pipeline/                # See RNAseqSetupLog.md
+    ├── CUP_DependANT_Pipeline/          # Downstream dependency / drug-target analysis
+    └── CUP_GeneTargetDatabase/          # Open Targets Platform download
 ```
 
 ---
@@ -320,6 +325,6 @@ The following were already present on the machine before this setup:
 
 - [ ] Contact sysadmin to clear `/home/jeb49` (1.2TB on root partition)
 - [ ] Set up Seqera Tower for remote pipeline monitoring
-- [ ] Complete PureCN interval file generation
-- [ ] Write PureCN run script
-- [ ] Download nf-core/rnaseq pipeline when needed
+- [x] Complete PureCN interval file generation (`References/purecn/HyperExomeV2_hg38_intervals.txt`)
+- [x] Write PureCN run script (`dnaseq-purecn-run.sh`)
+- [x] Download nf-core/rnaseq pipeline (see `RNAseqSetupLog.md`)
