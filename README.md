@@ -24,7 +24,6 @@ CUP_Pipeline/
 │   └── scripts/rnaseq/        #   Download, test and production run scripts
 ├── CUP_DependANT_Pipeline/    # Downstream: LoF/GoF calling, essential-gene prediction,
 │                              #   gene→drug and clinical-trial matching
-├── CUP_GeneTargetDatabase/    # Open Targets Platform dataset download
 ├── envs/                      # Conda environment definitions
 └── Documents/                 # Setup logs / reproducibility guides
 ```
@@ -72,10 +71,6 @@ Python application that takes patient mutation and expression data and:
 
 See [CUP_DependANT_Pipeline/dep-scripts/README.md](CUP_DependANT_Pipeline/dep-scripts/README.md).
 
-## Gene Target Database (CUP_GeneTargetDatabase)
-
-Downloads a curated set of Open Targets Platform datasets (Parquet) for target prioritisation. See [CUP_GeneTargetDatabase/README.md](CUP_GeneTargetDatabase/README.md).
-
 ---
 
 ## Getting Started
@@ -91,7 +86,6 @@ Conda environments:
 conda env create -f envs/nfcore.yml    # nf-core tools + Java 17 (Nextflow runs)
 conda env create -f envs/purecn.yml    # PureCN (R 4.3)
 conda env create -f envs/cupwes.yml    # WES post-pipeline filtering scripts
-conda env create -f envs/OTP_GeneSelection.yml   # Open Targets work
 ```
 
 Typical WES run:

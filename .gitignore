@@ -23,3 +23,6 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
+
+# Kept locally, not part of this repository
+CUP_GeneTargetDatabase/
