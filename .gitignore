@@ -3,9 +3,23 @@ Data/
 References/
 Results/
 
-# Singularity cache
+# Singularity / Apptainer images
 Singularity-cache/
+**/singularity-images/
+*.img
+*.sif
 
-# Nextflow work/cache directories (any depth)
-**/.nextflow*/
-.nextflow*/
+# Nextflow runtime files (any depth)
+**/.nextflow/
+.nextflow*
+**/work/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
