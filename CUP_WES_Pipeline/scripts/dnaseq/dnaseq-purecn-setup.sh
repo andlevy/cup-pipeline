@@ -5,7 +5,7 @@
 # Generates the PureCN interval file from the KAPA HyperExome V2 BED file
 # and the GRCh38 reference FASTA. This only needs to be run once.
 #
-# Usage: bash purecn_setup.sh
+# Usage: bash dnaseq-purecn-setup.sh
 # Version: v0.1.0
 # =============================================================================
 

@@ -6,7 +6,7 @@
 # Runs the built-in test profile to verify the pipeline, containers, and
 # environment are all working correctly before running on real data.
 #
-# Usage: bash run_sarek_test.sh
+# Usage: bash dnaseq-local-test.sh
 # =============================================================================
 
 BASE=/mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/CUP_Pipeline

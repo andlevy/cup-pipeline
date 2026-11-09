@@ -7,7 +7,7 @@
 #   - Mutect2 unfiltered VCF
 #   - PureCN GC-corrected interval file
 #
-# Usage: bash purecn_run.sh
+# Usage: bash dnaseq-purecn-run.sh
 # Version: v0.1.0
 # =============================================================================
 

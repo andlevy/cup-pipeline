@@ -14,9 +14,7 @@ SAMPLE=S1
 CNS=${BASE}/Results/${POOL}/variant_calling/cnvkit/${SAMPLE}/${SAMPLE}.tumor_only.call.cns
 COSMIC=${BASE}/References/cosmic/Census_all.csv
 OUTDIR=${BASE}/Results/${POOL}/cnv_filtered
-REPORTDIR=${BASE}/Results/${POOL}
 SCRIPT=${BASE}/CUP_WES_Pipeline/scripts/dnaseq/dnaseq-filtercnv.py
-REPORT_SCRIPT=${BASE}/CUP_WES_Pipeline/scripts/dnaseq/dnaseq-filtercnv-report.py
 
 echo "=============================================="
 echo " CUP WES -- CNV Filter"
@@ -33,16 +31,8 @@ python3 ${SCRIPT} \
     --outdir     ${OUTDIR} \
     --min_probes 10 \
     --min_log2   0.3 \
-    --min_weight 0.0
-
-echo "Run 1 QC report..."
-python3 ${REPORT_SCRIPT} \
-    --cns        ${CNS} \
-    --cosmic     ${COSMIC} \
-    --outdir     ${REPORTDIR} \
-    --min_probes 10 \
-    --min_log2   0.3 \
-    --min_weight 0.0
+    --min_weight 0.0 \
+    --report
 
 # --- Run 2: Tier 1 only ---
 echo "Run 2: Tier 1 only..."
@@ -53,17 +43,8 @@ python3 ${SCRIPT} \
     --min_probes 10 \
     --min_log2   0.3 \
     --min_weight 50.0 \
-    --tier       1
-
-echo "Run 2 QC report..."
-python3 ${REPORT_SCRIPT} \
-    --cns        ${CNS} \
-    --cosmic     ${COSMIC} \
-    --outdir     ${REPORTDIR} \
-    --min_probes 10 \
-    --min_log2   0.3 \
-    --min_weight 50.0 \
-    --tier       1
+    --tier       1 \
+    --report
 
 echo ""
 echo "Completed: $(date)"

@@ -11,7 +11,7 @@
 # Tools:         Mutect2, CNVKit, VEP
 # Reference:     GRCh38 (GATK iGenomes bundle)
 #
-# Usage: bash run_cup_wes.sh
+# Usage: bash dnaseq-local-run-0.1.0.sh
 # Version: v0.1.0
 # =============================================================================
 
@@ -27,6 +27,10 @@ REFS=${BASE}/References
 # Activate conda environment (provides Java 17 and nf-core tools)
 source /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/miniconda3/etc/profile.d/conda.sh
 conda activate nfcore
+
+# Nextflow lives in the user's ~/.local/bin, not in the conda env -- add it
+# explicitly so this script runs from a non-login shell (cron, CI) too
+export PATH="${HOME}/.local/bin:${PATH}"
 
 # Redirect temp directories to big drive to avoid filling root partition
 mkdir -p /mnt/913bddcf-fa31-4a34-a763-fbc307b90cde/tmp
@@ -84,6 +88,7 @@ nextflow run ${PIPELINE} \
     --vep_genome GRCh38 \
     --vep_species homo_sapiens \
     --vep_cache_version 110 \
+    --vep_include_fasta \
     --aligner bwa-mem2 \
     --wes \
     --trim_fastq \
